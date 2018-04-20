@@ -1,0 +1,65 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Angular 5 Filter and Search Application </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <span class="custom-dropdown">
+          <select (change)="clickCity($event)" [(ngModel)]="filter.city">
+            <option [ngValue]="undefined" disabled>{{cityPlace}}</option>
+            <option *ngFor="let cityName of city" value={{cityName}}>{{cityName}}</option>
+          </select>
+        </span>
+        <span class="custom-dropdown">
+          <select (change)="clickCompany($event)" [(ngModel)]="filter.company">
+            <option [ngValue]="undefined" disabled>{{companyPlace}}</option>
+            <option *ngFor="let companyName of company" value={{companyName}}>{{companyName}}</option>
+          </select>
+        </span>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" name="id" [(ngModel)]="filter.name" placeholder="Search by Name" aria-label="Search">
+    </form>
+    <button (click)="clear(0)" class="btn btn-outline-success my-2 my-sm-0">Clear Filters</button>
+  </div>
+</nav>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <p>
+        <span id="filter-all">Showing candidates from</span>
+        <span id="filter2" class="filter"> {{filter.city}}
+          <a (click)="clear(2)">x</a>
+        </span>
+        <span id="filter1" class="filter">{{filter.company}}
+          <a (click)="clear(1)">x</a>
+        </span>
+      </p>
+      <div class="card" *ngFor="let item of list | itemfilter:filter; let i = index">
+        <div class="card-image">
+          <img src="https://www.math.uni-frankfurt.de/~person/_4170854.jpg" alt="user-image" />
+        </div>
+        <div class="card-info">
+          <div class="name">
+            <p>{{item.name}}</p>
+          </div>
+          <hr>
+          <div class="content">
+            <p>
+              <b>Job Title:</b>
+              {{item.title}}
+            </p>
+            <p>
+              <b>City:</b> {{item.city}}
+            </p>
+            <b>Company: {{item.company}}</b>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

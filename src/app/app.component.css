@@ -1,0 +1,194 @@
+@import url("//fonts.googleapis.com/css?family=Lato:400,300,100");
+@import url("//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.min.css");
+table,
+footer {
+  width: 550px;
+}
+
+h1 {
+  color: #404040;
+  font-size: 16px;
+}
+
+ul {
+  margin: 0;
+}
+
+th,
+td,
+input,
+p,
+footer,
+li,
+label {
+  color: #404040;
+  font-size: 14px;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin: 1em 0;
+}
+
+table thead th,
+table tfoot td {
+  background-color: lightgray;
+  border: 1px solid gray;
+  padding: 4px;
+}
+
+table td {
+  border: 1px solid gray;
+  padding: 2px 4px;
+}
+
+table input {
+  padding: 1px 2px;
+}
+
+table input[type=number] {
+  width: 60px;
+}
+
+* {
+  box-sizing: border-box;
+  outline: none;
+}
+
+body {
+  color: #7f8c8d;
+  font-size: 16px;
+  font-weight: 300;
+  font-family: 'Lato';
+  height: 100%;
+  padding: 20px 0;
+}
+
+a {
+  -moz-transition: all 0.1s ease-out;
+  -o-transition: all 0.1s ease-out;
+  -webkit-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+  color: #e74c3c;
+}
+
+a:hover {
+  color: #4BD3F4;
+}
+
+/* Card */
+
+.card {
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #ecf0f1));
+  background-image: -moz-linear-gradient(top, #ffffff 0%, #ecf0f1 100%);
+  background-image: -webkit-linear-gradient(top, #ffffff 0%, #ecf0f1 100%);
+  background-image: linear-gradient(to bottom, #ffffff 0%, #ecf0f1 100%);
+  -moz-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+  display: block;
+  position: relative;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.card .card-image {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.card .card-image img {
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+  background-position: -45px 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 0;
+  cursor: pointer;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  position: absolute;
+  padding: 0;
+}
+
+.card .card-info {
+  margin-left: 120px;
+}
+
+.card .card-info .name {
+  font-size: 28px;
+  font-weight: 300;
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+}
+
+.card .card-info hr {
+  margin: 0 0 15px;
+}
+
+.filter {
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid black;
+}
+
+#filter-all,
+#filter1,
+#filter2 {
+  display: none;
+}
+
+/* Custom dropdown */
+
+.custom-dropdown {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 10px;
+}
+
+.custom-dropdown select {
+  background-color: #68ffde;
+  font-size: inherit;
+  padding: .5em;
+  padding-right: 2.5em;
+  border: 0;
+  margin: 0;
+  border-radius: 3px;
+  text-indent: 0.01px;
+  text-overflow: '';
+  -webkit-appearance: button;
+}
+
+.custom-dropdown::before,
+.custom-dropdown::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+
+.custom-dropdown::after {
+  /*  Custom dropdown arrow */
+  content: "\25BC";
+  height: 1em;
+  font-size: .625em;
+  line-height: 1;
+  right: 1.2em;
+  top: 50%;
+  margin-top: -.5em;
+}
+
+.custom-dropdown::before {
+  /*  Custom dropdown arrow cover */
+  width: 2em;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 0 3px 3px 0;
+}
